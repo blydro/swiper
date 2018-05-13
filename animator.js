@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get('window');
 
 export default class Animator extends Component {
   componentWillMount() {
-    let { onTossRight, onTossLeft } = this.props;
+    const { onTossRight, onTossLeft } = this.props;
     this.pan = new Animated.ValueXY();
 
     this.cardPanResponder = PanResponder.create({
@@ -26,7 +26,7 @@ export default class Animator extends Component {
         } else {
           Animated.spring(this.pan, {
             toValue: { x: 0, y: 0 },
-            friction: 4.5,
+            friction: 9,
           }).start();
         }
       },
@@ -50,10 +50,10 @@ export default class Animator extends Component {
   }
 
   render() {
-    let { children, style } = this.props;
+    const { children, style } = this.props;
     const rotateCard = this.pan.x.interpolate({
       inputRange: [-200, 0, 200],
-      outputRange: ['10deg', '0deg', '-10deg'],
+      outputRange: ['2.5deg', '0deg', '-2.5deg'],
     });
     const animatedStyle = {
       transform: [
