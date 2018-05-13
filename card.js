@@ -3,12 +3,12 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 
 export default ({ image, title, subTitle }) => (
   <View style={styles.container}>
-    <Image style={styles.image} source={{ uri: image }}>
-      <View style={styles.textContainer}>
-        <Text style={styles.name}>{title}</Text>
-        <Text style={styles.subTitle}>{subTitle}</Text>
-      </View>
-    </Image>
+    <Image style={styles.image} source={{ uri: image }} />
+
+    <View style={styles.textContainer}>
+      <Text style={styles.name}>{title}</Text>
+      <Text style={styles.subTitle}>{subTitle}</Text>
+    </View>
   </View>
 );
 
