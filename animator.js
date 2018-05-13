@@ -26,7 +26,7 @@ export default class Animator extends Component {
         } else {
           Animated.spring(this.pan, {
             toValue: { x: 0, y: 0 },
-            friction: 9,
+            friction: 4.5,
           }).start();
         }
       },
@@ -58,7 +58,7 @@ export default class Animator extends Component {
     const animatedStyle = {
       transform: [
         { translateX: this.pan.x },
-        { translateY: this.pan.y },
+        // { translateY: this.pan.y },
         { rotate: rotateCard },
       ],
     };
